@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-  View,
-  Text,
   Image,
-  TouchableWithoutFeedback,
   Linking,
+  Text,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import styles from './DetailCard.style';
+
 export default function DetailCard({data}) {
   return (
     <View style={styles.container}>
@@ -28,12 +29,22 @@ export default function DetailCard({data}) {
         </View>
       </ScrollView>
       <TouchableWithoutFeedback
-
+        disabled={!data.meals[0].strYoutube}
         onPress={() => {
           Linking.openURL(data.meals[0].strYoutube);
         }}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Watch on Youtube</Text>
+        <View
+          style={
+            data.meals[0].strYoutube ? styles.button : styles.button_deactivate
+          }>
+          <Text
+            style={
+              data.meals[0].strYoutube
+                ? styles.buttonText
+                : styles.buttonText_deactivate
+            }>
+            Watch on Youtube
+          </Text>
         </View>
       </TouchableWithoutFeedback>
     </View>
