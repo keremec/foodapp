@@ -12,10 +12,18 @@ export default function Detail({route}) {
     Config.API_MEAL_FILTER_BY_ID_URL + route.params.idMeal,
   );
   if (loading) {
-    return <Loading />;
+    return (
+      <View style={styles.container}>
+        <Loading />
+      </View>
+    );
   }
   if (error) {
-    return <Error />;
+    return (
+      <View style={styles.container}>
+        <Error props={error} />
+      </View>
+    );
   }
   return (
     <View style={styles.container}>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {Alert, FlatList, View} from 'react-native';
+import React from 'react';
+import {FlatList, View} from 'react-native';
 import styles from './Meals.style';
 import Config from 'react-native-config';
 import useFetch from '../../hooks';
@@ -12,16 +12,17 @@ export default function Meals({route, navigation}) {
   const {data, error, loading} = useFetch(url);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <View style={styles.container}>
+        <Loading />
+      </View>
+    );
   }
   if (error) {
     return (
-      <Error
-        onClickTest={() => {
-          Alert.alert('tes');
-
-        }}
-      />
+      <View style={styles.container}>
+        <Error />
+      </View>
     );
   }
 

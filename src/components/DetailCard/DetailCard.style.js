@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -37,13 +37,26 @@ export default StyleSheet.create({
   button: {
     backgroundColor: 'red',
     padding: 10,
-    marginHorizontal:25,
-    marginTop:10,
+    marginHorizontal: 25,
+    marginTop: 10,
     marginBottom: 25,
     borderRadius: 10,
   },
   buttonText: {
     color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  button_deactivate: {
+    backgroundColor: 'grey',
+    padding: 10,
+    marginHorizontal: 25,
+    marginTop: 10,
+    marginBottom: 25,
+    borderRadius: 10,
+  },
+  buttonText_deactivate: {
+    color: 'black',
     textAlign: 'center',
     fontSize: 16,
   },
